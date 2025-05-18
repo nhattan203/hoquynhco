@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chúc mừng sinh nhật Hồ Quỳnh Cơ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body, html { height: 100%; font-family: 'Roboto', sans-serif; overflow: hidden; }
+
+    .page {
+      position: absolute; top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 1s ease;
+      z-index: 1;
+      background: #ffe6f0; /* nền hồng nhạt */
+      text-align: center;
+      padding: 20px;
+    }
+
+    .page.active { opacity: 1; z-index: 2; }
+
+    #page1 h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      color: #d63384;
+    }
+
+    #page1 button {
+      padding: 1em 2em;
+      font-size: 1.2em;
+      background: white;
+      color: #ff1493;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 10px white;
+      font-weight: bold;
+    }
+
+    #page1 a {
+      margin-top: 20px;
+      display: inline-block;
+      color: #ffffff;
+      background-color: #4267B2;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 10px #4267B2;
+    }
+
+    #page2 img {
+      width: 80vw;
+      max-width: 800px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px #ff69b4;
+      animation: fadeIn 1s ease-out;
+    }
+
+    #page3 h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3em;
+      color: #ff69b4;
+      margin-bottom: 10px;
+    }
+
+    #page3 .avatar {
+      width: 150px;
+      height: px;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      object-fit: cover;
+      box-shadow: 0 0 30px #ff69b4;
+      animation: pop 3s infinite ease-in-out;
+    }
+
+    #page3 .message {
+      margin-top: 20px;
+      font-size: 1.2em;
+      max-width: 90vw;
+      color: #d63384;
+      border-right: 2px solid #fff;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    @keyframes pop {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Trang 1: Nút mở thiệp -->
+<div class="page active" id="page1">
+  <h2>💌 Một món quà nhỏ cho Hồ Quỳnh Cơ 💖</h2>
+  <button onclick="nextPage(2)">Bấm để mở thiệp</button>
+  <a href="https://www.facebook.com/ho.quynh.co" target="_blank">🔗 Facebook của Cơ</a>
+</div>
+
+<!-- Trang 2: Hiện ảnh -->
+<div class="page" id="page2">
+  <img src="https://scontent.fhan14-5.fna.fbcdn.net/v/t39.30808-6/499403358_122125587662723402_9052853977048726701_n.jpg?stp=dst-jpg_p600x600_tt6&_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHwAIVGNQuxTXLGWRCPMhM_DmOJ8NAjGZkOY4nw0CMZmd8DQnKJCp64zuoa-ej4t9so10Q0coP0kpszZDYErLJX&_nc_ohc=QMa6sfk183sQ7kNvwE3nHLC&_nc_oc=Adm5RLijuH_-P4S2SQPZ6qEqz04N1Ptg4fEjZKsG1tOJYt__IxGIIiNGHZx_DKYoTcXEx8yasO8dtkRvOE5VbPh2&_nc_zt=23&_nc_ht=scontent.fhan14-5.fna&_nc_gid=zmyc_JzD6USdhn580vF9mQ&oh=00_AfIi61ljPeCrZERVxl6VdZbcZ73a1itxWSPAsqoQ6idjNg&oe=682F4849" alt="Hồ Quỳnh Cơ">
+</div>
+
+<!-- Trang 3: Lời chúc -->
+<div class="page" id="page3">
+  <h1>🎉 Chúc mừng sinh nhật Hồ Quỳnh Cơ 🎂</h1>
+  <img class="avatar" src="https://scontent.fhan14-5.fna.fbcdn.net/v/t39.30808-1/475977354_1664805501107019_9163672781786240815_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=109&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeGRrPjEHrESFMuhrfCCCQMEPRr7LsKqNgM9Gvsuwqo2A8Sd-rhuOVJNVctqY3t9KO7xXGhwW-fbUVBCfipV6fRp&_nc_ohc=-FgLQI8L18oQ7kNvwEELZVc&_nc_oc=AdmkK8ToVyZTTZcbs72qYyJ6fv2c23dKnn-QjUJ2pMpyX0tQkd02RNKkpysmJ4RUKD_6sWm4rgPZ2lqE1kitG0EO&_nc_zt=24&_nc_ht=scontent.fhan14-5.fna&_nc_gid=vtANAkwLTU3ZRHbvcUD2Sg&oh=00_AfJNrlVMXlEeEUZeshW-cJ-kMPNq5nN742XPjmlQFbwAVg&oe=682F440A" alt="Hồ Quỳnh Cơ">
+  <div class="message" id="typedMessage"></div>
+</div>
+
+<canvas id="fireworks"></canvas>
+
+<audio id="music" src="https://cdn.pixabay.com/download/audio/2022/10/20/audio_f075378f5a.mp3?filename=happy-birthday-to-you-121989.mp3" loop></audio>
+
+<script>
+  let currentPage = 1;
+
+  function nextPage(page) {
+    document.getElementById(`page${currentPage}`).classList.remove('active');
+    document.getElementById(`page${page}`).classList.add('active');
+    currentPage = page;
+
+    if (page === 2) {
+      setTimeout(() => nextPage(3), 5000);
+    }
+
+    if (page === 3) {
+      document.getElementById('music').play();
+      startFireworks();
+      typeMessage();
+    }
+  }
+
+  // Gõ từng chữ
+  const fullText = `Chúc Cơ – cô gái tháng 5 xinh đẹp,
+luôn rạng rỡ, yêu đời và ngập tràn yêu thương.
+
+Chúc em tuổi mới thật nhiều trải nghiệm hay ho,
+nhiều tiếng cười, sức khỏe, và những điều ngọt ngào nhất.
+
+Mãi luôn tỏa sáng như ánh mặt trời! 🌞💖`;
+
+  function typeMessage() {
+    const messageEl = document.getElementById("typedMessage");
+    let index = 0;
+    const typing = setInterval(() => {
+      messageEl.textContent += fullText[index];
+      index++;
+      if (index === fullText.length) clearInterval(typing);
+    }, 50);
+  }
+
+  // Fireworks
+  const canvas = document.getElementById("fireworks");
+  const ctx = canvas.getContext("2d");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  let particles = [];
+
+  class Particle {
+    constructor(x, y, color) {
+      this.x = x; this.y = y;
+      this.radius = Math.random() * 2 + 1;
+      this.color = color;
+      this.speed = Math.random() * 8 + 2;
+      this.angle = Math.random() * 2 * Math.PI;
+      this.life = 100;
+    }
+
+    update() {
+      this.life--;
+      this.x += Math.cos(this.angle) * this.speed;
+      this.y += Math.sin(this.angle) * this.speed + 0.5;
+    }
+
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+      ctx.fillStyle = this.color;
+      ctx.fill();
+    }
+  }
+
+  function createFirework() {
+    const x = Math.random() * canvas.width;
+    const y = Math.random() * canvas.height / 2;
+    const color = `hsl(${Math.random() * 360}, 100%, 70%)`;
+    for (let i = 0; i < 50; i++) {
+      particles.push(new Particle(x, y, color));
+    }
+  }
+
+  function animateFireworks() {
+    ctx.fillStyle = "rgba(0,0,0,0.2)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    particles.forEach((p, i) => {
+      p.update();
+      p.draw();
+      if (p.life <= 0) particles.splice(i, 1);
+    });
+    requestAnimationFrame(animateFireworks);
+  }
+
+  function startFireworks() {
+    setInterval(createFirework, 1000);
+    animateFireworks();
+  }
+
+  window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+</script>
+</body>
+</html>
